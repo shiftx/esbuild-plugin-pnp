@@ -5,6 +5,12 @@
     "main": "index.js",
     "author": "Eigil Sagafos",
     "license": "MIT",
+    "keywords": [
+        "esbuild",
+        "pnp",
+        "plugnplay",
+        "yarn"
+    ],
     "files": [
         "index.js",
         "LICENSE",
