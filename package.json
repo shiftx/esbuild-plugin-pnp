@@ -1,6 +1,6 @@
 {
     "name": "esbuild-plugin-pnp",
-    "version": "0.1.3",
+    "version": "0.2.0",
     "description": "Yarn PnP plugin for esbuild 0.8.1 or higher",
     "main": "index.js",
     "author": "Eigil Sagafos",
