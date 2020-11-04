@@ -5,6 +5,10 @@
     "main": "index.js",
     "author": "Eigil Sagafos",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shiftx/esbuild-plugin-pnp.git"
+    },
     "keywords": [
         "esbuild",
         "pnp",
