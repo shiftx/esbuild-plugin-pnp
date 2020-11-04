@@ -17,7 +17,6 @@ module.exports = ({ external = [] }) => {
   return {
     name: "pnp-plugin",
     setup(build) {
-      console.log(build);
       // Initial resolve if not a relative path
       build.onResolve({ filter: /^[^\.\/]/ }, args => {
         if (externalsSet.has(args.path)) return { external: true };
