@@ -1,8 +1,11 @@
+if (!module.pnpApiPath) {
+  console.error(
+    "Error: pnpApi not found. Are you running command with yarn? `yarn node ...`"
+  );
+  process.exit(1);
+}
 const pnpapi = require("pnpapi");
-const { PosixFS, ZipOpenFS } = require(`@yarnpkg/fslib`);
-const libzip = require(`@yarnpkg/libzip`).getLibzipSync();
-const zipOpenFs = new ZipOpenFS({ libzip });
-const crossFs = new PosixFS(zipOpenFs);
+const readFileSync = require("fs").readFileSync;
 
 const pnpResolve = args => {
   const path = pnpapi.resolveRequest(args.path, args.resolveDir + "/", {
@@ -12,7 +15,7 @@ const pnpResolve = args => {
   return path ? { path, namespace: "pnp" } : { external: true };
 };
 
-module.exports = ({ external = [] }) => {
+module.exports = ({ external = [] } = {}) => {
   let externalsSet = new Set(external);
   return {
     name: "pnp-plugin",
@@ -28,7 +31,7 @@ module.exports = ({ external = [] }) => {
       build.onLoad({ filter: /.*/, namespace: "pnp" }, args => {
         const resolveDir = args.path.match(/(.+\/)/)[1];
         return {
-          contents: crossFs.readFileSync(args.path),
+          contents: readFileSync(args.path),
           resolveDir,
           loader: "default",
         };

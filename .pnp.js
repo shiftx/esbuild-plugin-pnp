@@ -37,8 +37,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
-            ["@yarnpkg/fslib", "npm:2.3.0"],
-            ["@yarnpkg/libzip", "npm:2.2.1"],
             ["esbuild", "npm:0.8.1"],
             ["release-it", "npm:14.0.3"]
           ],
@@ -306,15 +304,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["@types/emscripten", [
-        ["npm:1.39.4", {
-          "packageLocation": "./.yarn/cache/@types-emscripten-npm-1.39.4-4d03380faa-b848421e25.zip/node_modules/@types/emscripten/",
-          "packageDependencies": [
-            ["@types/emscripten", "npm:1.39.4"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["@types/http-cache-semantics", [
         ["npm:4.0.0", {
           "packageLocation": "./.yarn/cache/@types-http-cache-semantics-npm-4.0.0-000c9dc8e0-e16fae56d4.zip/node_modules/@types/http-cache-semantics/",
@@ -358,28 +347,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@types/responselike", "npm:1.0.0"],
             ["@types/node", "npm:14.14.6"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["@yarnpkg/fslib", [
-        ["npm:2.3.0", {
-          "packageLocation": "./.yarn/cache/@yarnpkg-fslib-npm-2.3.0-177ea80af4-0969bd6b12.zip/node_modules/@yarnpkg/fslib/",
-          "packageDependencies": [
-            ["@yarnpkg/fslib", "npm:2.3.0"],
-            ["@yarnpkg/libzip", "npm:2.2.1"],
-            ["tslib", "npm:1.14.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["@yarnpkg/libzip", [
-        ["npm:2.2.1", {
-          "packageLocation": "./.yarn/cache/@yarnpkg-libzip-npm-2.2.1-8ad75a808a-75813c2dbe.zip/node_modules/@yarnpkg/libzip/",
-          "packageDependencies": [
-            ["@yarnpkg/libzip", "npm:2.2.1"],
-            ["@types/emscripten", "npm:1.39.4"],
-            ["tslib", "npm:1.14.1"]
           ],
           "linkType": "HARD",
         }]
@@ -961,8 +928,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["esbuild-plugin-pnp", "workspace:."],
-            ["@yarnpkg/fslib", "npm:2.3.0"],
-            ["@yarnpkg/libzip", "npm:2.2.1"],
             ["esbuild", "npm:0.8.1"],
             ["release-it", "npm:14.0.3"]
           ],
