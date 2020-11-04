@@ -5,6 +5,11 @@
     "main": "index.js",
     "author": "Eigil Sagafos",
     "license": "MIT",
+    "files": [
+        "index.js",
+        "LICENSE",
+        "README.md"
+    ],
     "scripts": {
         "release": "release-it"
     },
