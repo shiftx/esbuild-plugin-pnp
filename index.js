@@ -4,10 +4,10 @@ if (!module.pnpApiPath) {
   );
   process.exit(1);
 }
-const pnpapi = require("pnpapi");
-const readFileSync = require("fs").readFileSync;
+let pnpapi = require("pnpapi");
+let fs = require("fs");
 
-const pnpResolve = args => {
+let pnpResolve = args => {
   const path = pnpapi.resolveRequest(args.path, args.resolveDir + "/", {
     considerBuiltins: true,
     extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
@@ -28,10 +28,11 @@ module.exports = ({ external = [] } = {}) => {
       // Subsequent resolves within pnp zip files
       build.onResolve({ filter: /.*/, namespace: "pnp" }, pnpResolve);
 
-      build.onLoad({ filter: /.*/, namespace: "pnp" }, args => {
-        const resolveDir = args.path.match(/(.+\/)/)[1];
+      build.onLoad({ filter: /.*/, namespace: "pnp" }, async args => {
+        let resolveDir = args.path.match(/(.+\/)/)[1];
+        let contents = await fs.promises.readFile(args.path, "utf8");
         return {
-          contents: readFileSync(args.path),
+          contents,
           resolveDir,
           loader: "default",
         };
